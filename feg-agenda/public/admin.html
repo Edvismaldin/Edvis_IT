@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Admin - Agenda FEG</title>
+	<link rel="stylesheet" href="/public/styles.css" />
+</head>
+<body>
+	<header class="container">
+		<h1>Painel Admin</h1>
+		<nav>
+			<a href="/public/index.html">Eventos</a>
+			<a href="/public/admin.html">Admin</a>
+		</nav>
+	</header>
+	<main class="container">
+		<section id="login-section">
+			<h2>Login</h2>
+			<form id="login-form">
+				<label>Senha de admin
+					<input type="password" id="password" required />
+				</label>
+				<button type="submit">Entrar</button>
+			</form>
+		</section>
+
+		<section id="admin-section" class="hidden">
+			<div class="flex-between">
+				<h2>Gerenciar eventos</h2>
+				<button id="logout-btn">Sair</button>
+			</div>
+
+			<form id="event-form" class="card">
+				<div class="grid">
+					<label>Título
+						<input type="text" id="title" required />
+					</label>
+					<label>Local
+						<input type="text" id="location" />
+					</label>
+					<label>Início
+						<input type="datetime-local" id="start_datetime" required />
+					</label>
+					<label>Fim
+						<input type="datetime-local" id="end_datetime" required />
+					</label>
+					<label>Capacidade
+						<input type="number" id="capacity" min="0" value="0" required />
+					</label>
+				</div>
+				<label>Descrição
+					<textarea id="description" rows="3"></textarea>
+				</label>
+				<button type="submit">Criar evento</button>
+			</form>
+
+			<div id="events-admin"></div>
+		</section>
+	</main>
+	<script src="/public/admin.js"></script>
+</body>
+</html>
