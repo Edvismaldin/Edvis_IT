@@ -1,0 +1,10 @@
+# If using Apache, enable rewriting
+<IfModule mod_rewrite.c>
+RewriteEngine On
+# Serve existing files
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+# Fallback to index.html for public
+RewriteRule ^$ public/index.html [L]
+</IfModule>
